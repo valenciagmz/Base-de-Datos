@@ -1,0 +1,80 @@
+BASE DE DATOS / Diseño Logico:
+
+E/R:
+Entidad
+Atributo
+Relación
+Llave Primaria
+Llave Compuesta 
+Cardinalidad
+
+Relacional:
+Tabla
+Campo, columna
+Relación
+Campo clave, PK
+Llave Compuesta
+Cardinalidad
+
+Llave foranea
+Foreign Key
+Llave secundaria
+
+Registro, fila, tupla
+
+Diseños:
+2 vistas
+Lógico-fisico.
+
+
+
+
+-----------------------------
+	Pedido
+-----------------------------
+idPedido 	| int 		PK, NOT NULL
+Hora/Fecha	| dateTime
+Total 		| decimal
+Iva 		| decimal
+
+idCliente 	| varchar 	FK (Foreign Key)
+
+
+
+
+
+-----------------------------
+	Cliente
+-----------------------------
+idCliente	| varchar 	PK, NOT NULL
+email 		| varchar
+tel 		| varchar
+nombre 		| varchar 	NOT NULL
+domicilio 	| varchar
+
+
+
+
+------------------------------
+	Productos
+------------------------------
+idProducto 	| int 		PK, NOT NULL
+nombre 		| varchar	NOT  NULL
+precio 		| decimal
+gramaje 	| decimal 
+existencias 	| int
+min 		| int
+max 		| int
+
+
+
+
+		TABLA DE ASIGNACIONES.
+
+----------------------------------------------------------------------------
+	Asignaciones	|Pedido		|Producto	|
+----------------------------------------------------------------------------
+	idAsignacion	|int		|int		|PK, NOT NULL
+	idPedido	|int		|int		|FK
+	idProducto	|int		|int		|FK
+	cantidad	|int		|int		|
